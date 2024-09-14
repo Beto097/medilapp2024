@@ -7,6 +7,5 @@
 @section('contenido')
 
     
-    {{Auth::user()->compania}}
     
 @endsection
