@@ -24,30 +24,41 @@
       <div class="card-body">
           <h3 class="card-title mb-3 text-center">Historial del Paciente</h3>
           <ul class="list-unstyled mb-0">
-              <li class="" style="font-size: 130%"><i class="mdi mdi-phone me-2 text-success font-size-18"></i> <b>
+              <li class="" style="font-size: 130%"><i class="mdi mdi-account me-2 text-success font-size-18"></i> <b>
                 Nombre</b> : {{$paciente->nombre_paciente}} {{$paciente->apellido_paciente}} </li>
-              <li class="" style="font-size: 130%"><i class="mdi mdi-phone me-2 text-success font-size-18"></i> <b>
+              <li class="" style="font-size: 130%"><i class="mdi mdi-gender-male-female me-2 text-success font-size-18"></i> <b>
                       Sexo </b> : @if ($paciente->sexo_paciente=='m')
                           Masculino
                       @else
                           Femenino
                       @endif</li>
               <li class="" style="font-size: 130%"><i
-                      class="mdi mdi-email-outline text-success font-size-18 mt-2 me-2"></i>
+                      class="mdi mdi-cake-variant text-success font-size-18 mt-2 me-2"></i>
                   <b> Edad </b> : {{\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->age}}
               </li>
               <li class="" style="font-size: 130%"><i class="mdi mdi-phone me-2 text-success font-size-18"></i> <b>
                 Telefono</b> : {{$paciente->telefono_paciente}}</li>
-              <li class="" style="font-size: 130%"><i class="mdi mdi-phone me-2 text-success font-size-18"></i> <b>
+              <li class="" style="font-size: 130%"><i class="mdi mdi-human-male-female me-2 text-success font-size-18"></i> <b>
                   Estado Civil</b> : {{$paciente->estado_civil_paciente}}</li>
               <li class="" style="font-size: 130%"><i
-                    class="mdi mdi-map-marker text-success font-size-18 mt-2 me-2"></i>
+                    class="mdi mdi-city text-success font-size-18 mt-2 me-2"></i>
                 <b>Lugar de Trabajo</b> : {{$paciente->lugar_trabajo}}
             </li>
               <li class="" style="font-size: 130%"><i
                       class="mdi mdi-map-marker text-success font-size-18 mt-2 me-2"></i>
                   <b>Direccion</b> : {{$paciente->direccion_paciente}}
               </li>
+              @if (\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->age<18)
+                            <li class="" style="font-size: 130%"><i
+                              class="mdi mdi-account-multiple text-success font-size-18 mt-2 me-2"></i>
+                          <b>Responsable</b> : {{$consulta->responsable_menor}}
+                      </li>
+                      <li class="" style="font-size: 130%"><i
+                        class="mdi mdi-account-multiple text-success font-size-18 mt-2 me-2"></i>
+                    <b>Parentesco</b> : {{$consulta->parentesco_menor}}
+                </li>
+              @endif
+              
           </ul>
       </div>
     </div>           

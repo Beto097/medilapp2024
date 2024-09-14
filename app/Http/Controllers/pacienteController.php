@@ -208,6 +208,9 @@ class pacienteController extends Controller
                 $obj_paciente->sexo_paciente = $request->txtsexo;
                 $obj_paciente->fecha_nacimiento_paciente = $request->txtfecnac;
                 $obj_paciente->telefono_paciente = $request->txttelefono;
+                $obj_paciente->estado_civil_paciente = $request->txtEstadoCivil;
+                $obj_paciente->lugar_trabajo = $request->txtTrabajo;
+                $obj_paciente->direccion_paciente = $request->txtDireccion;
                 $obj_paciente->email_paciente =  strtolower($request->txtemail);
                 $obj_paciente->comentario_paciente = nl2br($request->txtComentario);
                 $obj_paciente->save();
@@ -252,6 +255,9 @@ class pacienteController extends Controller
                 $obj_paciente->sexo_paciente = $request->txtsexo;
                 $obj_paciente->fecha_nacimiento_paciente = $request->txtfecnac;
                 $obj_paciente->telefono_paciente = $request->txttelefono;
+                $obj_paciente->estado_civil_paciente = $request->txtEstadoCivil;
+                $obj_paciente->lugar_trabajo = $request->txtTrabajo;
+                $obj_paciente->direccion_paciente = $request->txtDireccion;
                 $obj_paciente->email_paciente = strtolower($request->txtemail);
                 $obj_paciente->comentario_paciente = nl2br($request->txtComentario);
                 $obj_paciente->save();
@@ -278,6 +284,9 @@ class pacienteController extends Controller
                     $obj_paciente->sexo_paciente = $request->txtsexo;
                     $obj_paciente->fecha_nacimiento_paciente = $request->txtfecnac;
                     $obj_paciente->telefono_paciente = $request->txttelefono;
+                    $obj_paciente->estado_civil_paciente = $request->txtEstadoCivil;
+                    $obj_paciente->lugar_trabajo = $request->txtTrabajo;
+                    $obj_paciente->direccion_paciente = $request->txtDireccion;
                     $obj_paciente->email_paciente = $request->txtemail;
                     $obj_paciente->save();
                     if($request->esModal==2){

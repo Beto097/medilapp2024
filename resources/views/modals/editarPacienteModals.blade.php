@@ -57,11 +57,42 @@
                                     
                                 </div>
                             </div>
+                            <div class="col-lg-6"> 
+
+                                <div class="input-group mb-3">                                    
+                                    <div class="col-sm-12">
+                                        <select class="form-select" name="txtEstadoCivil" id="" value="" required>
+    
+                                            <option>Estado Civil</option>
+                                            
+                                            <option value="Soltero/a" @if ($fila->estado_civil_paciente == 'Soltero/a') selected @endif>Soltero/a</option>
+                                            <option value="Casado/a"@if ($fila->estado_civil_paciente == 'Casado/a') selected @endif>Casado/a</option>
+                                            <option value="Unido/a"@if ($fila->estado_civil_paciente == 'Unido/a') selected @endif>Unido/a</option>                                       
+                                            
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-lg-6">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Telefono</span>
                                     <input type="text"  class="form-control" id="inputtelefono" placeholder="Ejemplo:66666666" name="txttelefono" 
                                     value="{{$fila->telefono_paciente}}" >  
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Lugar de Trabajo</span>
+                                    <input type="text"  class="form-control"  placeholder="" name="txtTrabajo"
+                                    value="{{$fila->lugar_trabajo}}">  
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Direccion</span>
+                                    <input type="text"  class="form-control" placeholder="" 
+                                     name="txtDireccion" value="{{$fila->direccion_paciente}}" >  
                                 </div>
                             </div>
                             <div class="col-lg-12">

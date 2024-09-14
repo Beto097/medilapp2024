@@ -13,6 +13,23 @@
                     <div class="mb-0">
                         <div class="row">
 
+                            @if (\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->age<18)
+                                <div class="col-lg-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Persona Responsable</span>
+                                        <input type="text"  class="form-control" id="inputnombre" placeholder="Ejemplo:Juan Perez" name="txtNombre"
+                                        value="{{$fila->responsable_menor}}" required>     
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Parentesco</span>
+                                        <input type="text"  class="form-control" id="inputnombre" placeholder="Ejemplo:Juan Perez" name="txtNombre"
+                                        value="{{$fila->parentesco_menor}}" required>     
+                                    </div>
+                                </div>
+                            @endif
+
                             
                             <div class="col-lg-6">
                                 <div class="input-group mb-3">

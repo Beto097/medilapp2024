@@ -105,9 +105,10 @@
                                 @else
                                   <button type="button" class="btn btn-info btn-sm"
                                       data-bs-toggle="modal" data-animation="bounce" title="Crear Consulta"
-                                      data-bs-target=".editarPacienteModal{{$fila->id}}">
+                                      data-bs-target=".crearConsultaMenorModal{{$fila->id}}">
                                     <i id="iconoBoton" class="fas fa-file-medical"></i>
                                   </button>
+                                  @include('modals.crearConsultaMenorModals')
                                 @endif                       
                                 
                                 

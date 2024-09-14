@@ -129,4 +129,30 @@ class consultaController extends Controller
             return view('consulta.iniciar',['paciente'=>$paciente]);
         }
     }
+
+    public function menor(Request $request){
+
+        if (!Auth::user()) {
+
+            Session::put('url', url()->current());    
+            return redirect(route('login.index'));
+        }
+
+        if(Auth::user()->accesoRuta('/paciente/consulta')){
+                        
+  
+            $obj_consulta = new consulta();        
+            $obj_consulta->paciente_id= $request->paciente_id;
+            $obj_consulta->responsable_menor = $request->txtNombre;
+            $obj_consulta->parentesco_menor = $request->txtParentesco;
+            $obj_consulta->estado_consulta = 'Pendiente';        
+            
+            $obj_consulta->save();
+            return redirect()->back()->withErrors(['status' => "Se ha creado la consulta para el paciente: " .$obj_consulta->paciente->identificacion_paciente ]);
+            
+        }
+
+        return redirect(route('index'));
+
+    }
 }

@@ -56,11 +56,42 @@
                                     
                                 </div>
                             </div>
+                            <div class="col-lg-6"> 
+
+                                <div class="input-group mb-3">                                    
+                                    <div class="col-sm-12">
+                                        <select class="form-select" name="txtEstadoCivil" id="" value="" required>
+    
+                                            <option>Estado Civil</option>
+                                            
+                                            <option value="Soltero/a">Soltero/a</option>
+                                            <option value="Casado/a">Casado/a</option>
+                                            <option value="Unido/a">Unido/a</option>                                       
+                                            
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-lg-6">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Telefono</span>
                                     <input type="text"  class="form-control" id="inputtelefono" placeholder="Ejemplo:66666666" name="txttelefono" 
                                     value="{{old ('txttelefono')}}" >  
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Lugar de Trabajo</span>
+                                    <input type="text"  class="form-control"  placeholder="" name="txtTrabajo"
+                                    value="{{old ('txtTrabajo')}}">  
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Direccion</span>
+                                    <input type="text"  class="form-control" placeholder="" 
+                                     name="txtDireccion" value="{{old ('txtDireccion')}}" >  
                                 </div>
                             </div>
                             <div class="col-lg-12">
