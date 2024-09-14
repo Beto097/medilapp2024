@@ -8,7 +8,7 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                               
 
-                @if (false)
+                @if (true)
                     
                     @foreach (Auth::user()->rol->menu() as $pantalla_menu)  
                         <li>
