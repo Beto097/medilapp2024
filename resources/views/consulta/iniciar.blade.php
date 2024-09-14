@@ -62,13 +62,20 @@
 
       </div>
       <div class="col-md-2">
+
+        @isset($consulta)
+          @if ($consulta->estado_consulta != 'TERMINADA')
+            <button type="button" class="btn btn-primary waves-effect waves-light"
+              data-bs-toggle="modal" data-animation="bounce"
+              data-bs-target=".addNewRegistroModal">
+              Llenar Historial
+            </button>
+            @include('modals.RegistroModals')  
+          @endif
+            
+        @endisset
         
-          <button type="button" class="btn btn-primary waves-effect waves-light"
-            data-bs-toggle="modal" data-animation="bounce"
-            data-bs-target=".addNewRegistroModal">
-            Llenar Historial
-          </button>
-          @include('modals.RegistroModals')  
+          
       </div>
     </div>
     <div class="card">
@@ -79,7 +86,8 @@
                   <tr>
                     <th>ID</th>                    
                     <th>Fecha</th>                    
-                    <th>Diagnistico</th> 
+                    <th>Diagnistico</th>
+                    <th>Medico</th> 
                     <th>Acciones</th>
                   </tr>
               </thead>
@@ -87,17 +95,25 @@
 
               <tbody>
                 @foreach ($paciente->consultas as $key=>$fila)
+                  @if ($fila->estado_consulta =='TERMINADA')
                   <tr style="font-size: 100%;">
                     <td>{{$key+1}}</td>
                     <td>{{\Carbon\Carbon::parse($fila->fecha_consulta)->format('Y-m-d')}}</td>
-                    <td>{{$fila->diagnostico}}</td>                    
+                    <td>{{$fila->diagnostico}}</td>   
+                    <td>{{$fila->nombre_medico}}</td>                 
                     <td>
                       
-                    {{--  @if (Auth::user()->accesoRuta('/orden_laboratorio/create'))                        
-                        <a class="btn btn-info btn-sm btnIcono" title="Crear Orden" href="{{route('orden_laboratorio.create2', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
-                        
+                      @if (Auth::user()->accesoRuta('/paciente/historia/clinica'))
+                                              
+                        <button type="button" class="btn btn-primary waves-effect waves-light"
+                          data-bs-toggle="modal" data-animation="bounce"
+                          data-bs-target=".editarRegistroModal{{$fila->id}}">
+                          Ver Historia
+                        </button>
+                        @include('modals.editarRegistroModals')  
+                          
                       @endif
-
+                      {{--
                       
                       @if (Auth::user()->accesoRuta('/paciente/consulta'))                        
                         <a class="btn btn-info btn-sm btnIcono" title="Atender Consulta" href="{{route('consulta.create', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
@@ -128,8 +144,10 @@
                       
                       @endif 
                       
-                    </td>
-                  </tr>--}}
+                    </td>--}}
+                  </tr>
+                  @endif
+                  
                 @endforeach
 
               </tbody> 

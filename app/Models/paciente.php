@@ -10,7 +10,7 @@ class paciente extends Model
     use HasFactory;
 
     protected $table = "paciente";
-    protected $connection = 'dynamic_connection';
+    protected $connection = 'mysql';
 
 
     public function consultas()

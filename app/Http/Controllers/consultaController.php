@@ -111,4 +111,22 @@ class consultaController extends Controller
 
         return redirect(route('index'));
     }
+
+
+    public function historial($id){
+
+        if (!Auth::user()) {
+
+            Session::put('url', url()->current());    
+            return redirect(route('login.index'));
+        }
+
+        if(Auth::user()->accesoRuta('/consulta')){
+
+            
+            $paciente = paciente::find($id);
+
+            return view('consulta.iniciar',['paciente'=>$paciente]);
+        }
+    }
 }

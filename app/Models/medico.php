@@ -10,7 +10,7 @@ class medico extends Model
     use HasFactory;
     protected $table = "medico";
     protected $primaryKey="id";
-    protected $connection = 'dynamic_connection';
+    protected $connection = 'mysql';
     protected $fillable=array("numero_registro","nombre_medico","email_medico","telefono_medico");
 
     public function orden_laboratorio()

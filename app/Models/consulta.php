@@ -10,7 +10,7 @@ class consulta extends Model
     use HasFactory;
     protected $table = "consulta";
     protected $primaryKey="id";  
-    protected $connection = 'dynamic_connection';
+    protected $connection = 'mysql';
 
     public function paciente()
     {

@@ -10,7 +10,7 @@ class examen_orden_laboratorio extends Model
     use HasFactory;   
     protected $table = "examen_orden_laboratorio";
     protected $primaryKey="id";
-    protected $connection = 'dynamic_connection';
+    protected $connection = 'mysql';
     protected $fillable=array("orden_laboratorio_id","examen_id","estado_examen");
 
     public function examen()

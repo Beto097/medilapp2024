@@ -10,7 +10,7 @@ class examen_caracteristica_examen extends Model
     use HasFactory;
     protected $table = "examen_caracteristica_examen";
     protected $primaryKey="id";
-    protected $connection = 'dynamic_connection';
+    protected $connection = 'mysql';
     protected $fillable=array("examen_id","num_orden","caracteristica_examen_id");
 
     public function caracteristica_examen()

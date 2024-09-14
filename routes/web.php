@@ -68,12 +68,14 @@ use App\Http\Controllers\Controller;
     Route::get("/paciente/desbloquear/{id}", [pacienteController::class, 'desbloquear'])->name("paciente.desbloquear");
     Route::get("/paciente/buscar/{id}", [pacienteController::class, 'buscar'])->name("paciente.buscar");
     Route::get("/paciente/verPassword/{id}", [pacienteController::class, 'verPassword'])->name("paciente.verPassword");
+    
 
     /*Consultas*/
     Route::get("/consulta", [consultaController::class, 'index'])->name("consulta.index");
     Route::get("/paciente/iniciar/consulta/{id}", [consultaController::class, 'create'])->name("consulta.create");
     Route::get("/paciente/consulta/{id}", [consultaController::class, 'create2'])->name("consulta.create2");
     Route::POST("/consulta/guardar", [consultaController::class, 'save'])->name("consulta.save");
+    Route::get("/consulta/historial/{id}", [consultaController::class, 'historial'])->name("consulta.historial");
 
      /*caracteristica examen*/
     Route::get("/caracteristicaExamen",[caracteristica_examen_controller::class,'mostrar'])->name("caracteristica_examen.mostrar");

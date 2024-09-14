@@ -10,7 +10,7 @@ class examen extends Model
     use HasFactory;
     protected $table = "examen";
     protected $primaryKey="id";
-    protected $connection = 'dynamic_connection';
+    protected $connection = 'mysql';
     protected $fillable=array("nombre_examen","codigo_examen","detalle_examen","tipo_examen_id");
 
     public function tipo_examen()
