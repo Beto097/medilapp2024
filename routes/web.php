@@ -42,8 +42,7 @@ use App\Http\Controllers\Controller;
  Route::get('/menu', [Controller::class, 'pantallasMenu'])->name('menu');
  Route::get("/seleccionar/compañia/{id}", [Controller::class, 'seleccionarCompania'])->name("seleccionar.compania");
 
- Route::middleware('dynamic_database')->group(function () {
-    
+
     Route::get("/medico", [medicoController::class, 'index'])->name("medico.index");
     Route::get("/medico/create", [medicoController::class, 'create'])->name("medico.create");
     Route::get("/medico/crear", [medicoController::class, 'create'])->name("medico.crear");
@@ -141,7 +140,6 @@ use App\Http\Controllers\Controller;
     Route::get("/consultar/{cedula}", [orden_laboratorioController::class, 'consultar'])->name("consultar.cedula");
     Route::get("/consultarRegistro/{registro}", [orden_laboratorioController::class, 'consultarRegistro'])->name("consultar.registro");
 
-});
  
 
  
