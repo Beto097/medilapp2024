@@ -56,19 +56,15 @@
 
             <!-- Notification -->
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon waves-effect notification-step"
-                    id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <i class="mdi mdi-bell-outline"></i>
-                    <span class="badge bg-danger rounded-pill">2</span>
-                </button>
+                
+                
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-notifications-dropdown">
                     <div class="p-3">
                         <h6 class="m-0">Notifications (258) </h6>
                     </div>
 
-                    {{-- <div data-simplebar style="max-height: 230px;">
+                    <div data-simplebar style="max-height: 230px;">
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex align-items-start">
                                 <div class="avatar-xs me-3">
