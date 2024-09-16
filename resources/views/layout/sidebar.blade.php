@@ -8,7 +8,7 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                               
 
-                @if (env('APP_ENV'!="local2"))
+                @if (true)
                     
                     @foreach (Auth::user()->rol->menu() as $pantalla_menu)  
                         <li>
