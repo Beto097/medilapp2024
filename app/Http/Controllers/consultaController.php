@@ -21,10 +21,15 @@ class consultaController extends Controller
 
         if(Auth::user()->accesoRuta('/consulta')){
 
+            consulta::actualizarEstados();
+
             if(Auth::user()->accesoRuta('/consulta/all')){
 
                 $resultado = consulta::get();
 
+            }elseif(Auth::user()->accesoRuta('/paciente/historia/clinica')){
+
+                $resultado = consulta::where('estado_consulta','Pendiente')->orWhere('estado_consulta','EN CURSO')->orderBy('estado_consulta','DESC')->get();
             }else{
 
                 $resultado = consulta::where('estado_consulta','Pendiente')->get();
@@ -97,8 +102,8 @@ class consultaController extends Controller
             $consulta->laboratorios_examenes = $request->txtLaboratoriosExamenes;
             $consulta->diagnostico = $request->txtDiagnostico;
             $consulta->recomendaciones = $request->txtRecomendaciones;
-            $consulta->fecha_consulta = Carbon::now()->format('Y-m-d');
-            $consulta->estado_consulta = 'TERMINADA';
+            $consulta->fecha_consulta = Carbon::now()->format('Y-m-d H:i:s');
+            $consulta->estado_consulta = 'EN CURSO';
             $consulta->save();
 
             return redirect()->back()->withErrors(['status' => "Se ha guardo la consulta correctamente"]);

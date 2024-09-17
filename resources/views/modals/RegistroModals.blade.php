@@ -19,43 +19,46 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Nombre del Medico</span>
                                     <input type="text"  class="form-control" id="inputnombre" placeholder="Ejemplo:Juan Perez" name="txtNombre"
-                                    value="{{old ('txtNombre')}}" required>     
+                                        value= '{{$consulta->nombre_medico}}'
+                                         required>     
                                 </div>
+                                
                             </div>
 
                             <div class="col-lg-12">
                                 <div class="mb-3"> 
                                     <span>Historia Clinica</span>                                   
                                     <textarea class="form-control" id="exampleFormControlTextarea1"
-                                        placeholder="" name="txtHistoriaClinica" rows="3">{{old ('txtHistoriaClinica')}}</textarea>
+                                        placeholder="" name="txtHistoriaClinica" rows="3">{{$consulta->historia_clinica}}</textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <span>Examen Fisico</span>  
                                     <textarea class="form-control" id="exampleFormControlTextarea1"
-                                        placeholder="Comentario" name="txtExamenFisico" rows="3">{{old ('txtExamenFisico')}}</textarea>
+                                        placeholder="Comentario" name="txtExamenFisico" rows="3">{{$consulta->examen_fisico}}</textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <span>Laboratorios/Examenes</span>  
                                     <textarea class="form-control" id="exampleFormControlTextarea1"
-                                        placeholder="Comentario" name="txtLaboratoriosExamenes" rows="3">{{old ('txtLaboratoriosExamenes')}}</textarea>
+                                        placeholder="Comentario" name="txtLaboratoriosExamenes" rows="3">{{$consulta->laboratorios_examenes}}</textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Diagnostico</span>
-                                    <input type="text"  class="form-control" id="inputapellido" placeholder="Ejemplo:Perez" name="txtDiagnostico"
-                                    value="{{old ('txtDiagnostico')}}" required >  
+                                    <input type="text"  class="form-control" id="inputapellido" placeholder="Ejemplo:Perez" name="txtDiagnostico"                                    
+                                                                                    value= '{{$consulta->diagnostico}} '
+                                        required >  
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <span>Recomendaciones</span>  
                                     <textarea class="form-control" id="exampleFormControlTextarea1"
-                                        placeholder="Comentario" name="txtRecomendaciones" rows="3">{{old ('txtRecomandaciones')}}</textarea>
+                                        placeholder="Comentario" name="txtRecomendaciones" rows="3">{{$consulta->recomendaciones}}</textarea>
                                 </div>
                             </div>
                             
