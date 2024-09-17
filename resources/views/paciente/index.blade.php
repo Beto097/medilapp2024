@@ -100,12 +100,14 @@
                               @endif
                               
                               @if (Auth::user()->accesoRuta('/paciente/consulta')) 
+
+
                                 @if (\Carbon\Carbon::parse($fila->fecha_nacimiento_paciente)->age>=18)
-                                  <a class="btn btn-info btn-sm btnIcono" title="Crear Consulta" href="{{route('consulta.create2', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
+                                  <a class="btn btn-info btn-sm btnIcono @if ($fila->consultaActiva()) disabled @endif" title="Crear Consulta" href="{{route('consulta.create2', ['id'=> $fila->id] )}}" class="" @if ($fila->consultaActiva()) disabled @endif><i id="iconoBoton" class="fas fa-file-medical"></i></a>
                                 @else
                                   <button type="button" class="btn btn-info btn-sm"
                                       data-bs-toggle="modal" data-animation="bounce" title="Crear Consulta"
-                                      data-bs-target=".crearConsultaMenorModal{{$fila->id}}">
+                                      data-bs-target=".crearConsultaMenorModal{{$fila->id}}" @if ($fila->consultaActiva()) disabled @endif>
                                     <i id="iconoBoton" class="fas fa-file-medical"></i>
                                   </button>
                                   @include('modals.crearConsultaMenorModals')
@@ -115,7 +117,7 @@
                               @endif  
                               @if (Auth::user()->accesoRuta('/paciente/historia/clinica'))
 
-                                <a class="btn btn-pink btn-sm btnIcono" title="Ver Historial" href="{{route('consulta.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
+                                <a class="btn btn-pink btn-sm btnIcono" title="Ver Historial" href="{{route('consulta.historial', ['id'=> $fila->id] )}}" class="" ><i id="iconoBoton" class="fas fa-file-medical"></i></a>
                               @endif
 
                               @if (Auth::user()->accesoRuta('/paciente/update'))

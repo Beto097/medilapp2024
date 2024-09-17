@@ -25,10 +25,6 @@ class consultaController extends Controller
 
                 $resultado = consulta::get();
 
-            }else if(Auth::user()->accesoRuta('/consulta/delete')) {
-
-                $resultado = consulta::where('estado_consulta','<>','Terminado')->get();
-
             }else{
 
                 $resultado = consulta::where('estado_consulta','Pendiente')->get();
@@ -153,6 +149,28 @@ class consultaController extends Controller
         }
 
         return redirect(route('index'));
+
+    }
+
+    public function delete($id){
+
+        if (!Auth::user()) {
+
+            Session::put('url', url()->current());    
+            return redirect(route('login.index'));
+        }
+
+
+        if(Auth::user()->accesoRuta('/consulta/delete')){//solo modificar la ruta buscar las rutas en web.php o el la tabla pantallas
+            $resultado = consulta::find($id);
+            $resultado->estado_consulta = 'Eliminada';
+            $resultado->save();
+            return redirect()->back()->withErrors(['danger' => "Se Eliminó la consulta Correctamente!" ]);
+        }
+        
+              
+        return redirect(route('index'));
+        
 
     }
 }

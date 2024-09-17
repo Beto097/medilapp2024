@@ -80,41 +80,23 @@
                             <td><p>{{$fila->estado_consulta}}</p></td>
                             <td>
                               
-                             {{--  @if (Auth::user()->accesoRuta('/orden_laboratorio/create'))                        
-                                <a class="btn btn-info btn-sm btnIcono" title="Crear Orden" href="{{route('orden_laboratorio.create2', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
-                                
-                              @endif
---}}
+  
                               
                               @if (Auth::user()->accesoRuta('/consulta/registrar'))                        
                                 <a class="btn btn-info btn-sm btnIcono" title="Atender Consulta" href="{{route('consulta.create', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
                                 
                               @endif  
 
-                              {{-- @if (Auth::user()->accesoRuta('/consulta/update'))
-                                <button type="button" class="btn btn-success btn-sm"
-                                  data-bs-toggle="modal" data-animation="bounce"
-                                  data-bs-target=".editarConsultaModal{{$fila->id}}">
-                                  <i id="iconoBoton" class="fas fa-user-edit"></i>
-                                </button>  
-                                @include('modals.editarConsultaModals')
-                              @endif
+                              
 
                               @if (Auth::user()->accesoRuta('/consulta/delete'))
-                                @if($fila->estado_consulta == 1)
+                               
 
                                   <a class="btn btn-danger btn-sm btnIcono" title="Eliminar consulta" href="{{route('consulta.delete', ['id'=> $fila->id] )}}" onclick="
                                     return confirm('Desea eliminar este consulta del sistema?')"><i id="iconoBoton" class="fas fa-user-times"></i></a>
+                              @endif 
                                 
-                                @else
-                                  
-                                  <a class="btn btn-warning btn-sm btnIcono" title="Desbloquear consulta" href="{{route('consulta.desbloquear', ['id'=> $fila->id] )}}" onclick="
-                                    return confirm('Desea desbloquear este consulta del sistema?')"><i id="iconoBotonW" class="fas fa-user-shield"></i></a>
-                                
-                                @endif 
-                               
-                              @endif  --}}
-                              
+                                                              
                             </td>
                           </tr>
                         @endforeach
