@@ -25,6 +25,8 @@
           <h3 class="card-title mb-3 text-center">Historial del Paciente</h3>
           <ul class="list-unstyled mb-0">
               <li class="" style="font-size: 130%"><i class="mdi mdi-account me-2 text-success font-size-18"></i> <b>
+              Cédula</b> : {{$paciente->identificacion_paciente}}</li>
+              <li class="" style="font-size: 130%"><i class="mdi mdi-account me-2 text-success font-size-18"></i> <b>
                 Nombre</b> : {{$paciente->nombre_paciente}} {{$paciente->apellido_paciente}} </li>
               <li class="" style="font-size: 130%"><i class="mdi mdi-gender-male-female me-2 text-success font-size-18"></i> <b>
                       Sexo </b> : @if ($paciente->sexo_paciente=='m')
