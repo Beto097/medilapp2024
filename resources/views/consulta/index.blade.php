@@ -34,11 +34,11 @@
                 <div class="col-md-3">
                   <div class="row">
                     <div class="col-md-8">
-                      <button type="button" class="btn btn-primary waves-effect waves-light"
+                      {{-- <button type="button" class="btn btn-primary waves-effect waves-light"
                         data-bs-toggle="modal" data-animation="bounce"
                         data-bs-target=".addNewConsultaModal">
                         Agregar Consulta
-                      </button>
+                      </button> --}}
                       {{-- @include('modals.ConsultaModals')   --}}
                     </div>
                     <div class="col-md-4">
