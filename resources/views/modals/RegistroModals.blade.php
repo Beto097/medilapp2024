@@ -24,6 +24,14 @@
                                 </div>
                                 
                             </div>
+                            <div class="col-lg-6">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Fecha</span>
+                                        <input class="form-control" type="date" value="{{$consulta->fecha_consulta}}"
+                                            id="example-date-input" name="txtFecha">                                    
+                                </div>
+
+                            </div>
 
                             <div class="col-lg-12">
                                 <div class="mb-3"> 

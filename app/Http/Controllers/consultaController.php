@@ -93,7 +93,7 @@ class consultaController extends Controller
             return redirect(route('login.index'));
         }
 
-        if(Auth::user()->accesoRuta('/consulta/registrar')){
+        if(Auth::user()->accesoRuta('/consulta/registrar')){            
 
             $consulta = consulta::find($request->txtConsultaId);
             $consulta->nombre_medico = $request->txtNombre;
@@ -102,7 +102,7 @@ class consultaController extends Controller
             $consulta->laboratorios_examenes = $request->txtLaboratoriosExamenes;
             $consulta->diagnostico = $request->txtDiagnostico;
             $consulta->recomendaciones = $request->txtRecomendaciones;
-            $consulta->fecha_consulta = Carbon::now()->format('Y-m-d H:i:s');
+            $consulta->fecha_consulta = $request->txtFecha;
             $consulta->estado_consulta = 'EN CURSO';
             $consulta->save();
 
