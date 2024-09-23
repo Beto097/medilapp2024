@@ -163,6 +163,7 @@ use App\Http\Controllers\Controller;
  Route::get("/usuario/desbloquear/{id}", [usuarioController::class, 'desbloquear'])->name("usuario.desbloquear");
  Route::get("/usuario/bloquear/{id}", [usuarioController::class, 'bloquear'])->name("usuario.bloquear");
  Route::get("/usuario/nuevaPassword/{id}", [usuarioController::class, 'updatePassword'])->name("usuario.update.password");
+ Route::post('/usuario/nuevoPassword',[usuarioController::class,'newPassword'])->name('user.newPassword');
  Route::post("/usuario/nuevaPassword/{id}", [usuarioController::class, 'updatePasswordSave'])->name("usuario.update.password.save");
  Route::get("/userName/{usuario}", [usuarioController::class, 'userName'])->name("userName.usuario");
  Route::get("/email/{correo}", [usuarioController::class, 'Correo'])->name("Correo.usuario");

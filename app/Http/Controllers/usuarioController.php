@@ -326,6 +326,41 @@ class usuarioController extends Controller
 
     }
 
+    public function newPassword(Request $request){
+
+        if (!Auth::user()) {
+
+            Session::put('url', url()->current());    
+            return redirect(route('login.index'));
+        }
+
+        $usuario = Auth::user();        
+
+        if($usuario->password_usuario != md5($request->txtOldContrasena)){
+
+            return redirect()->back()->withInput()->withErrors(['passwordRed' => "Ingrese correctamente su contraseña Actual"]);
+        }
+        
+        if($request->txtOldContrasena == $request->txtNewContrasena){
+
+            return redirect()->back()->withInput()->withErrors(['passwordRed' => "La nueva contraseña es igual a la antigua contraseña"]);
+        }
+
+        if($request->txtNewRepContrasena != $request->txtNewContrasena){
+
+            return redirect()->back()->withInput()->withErrors(['passwordRed' => "La nueva contraseña no es igual a la Repeticion de la contraseña"]);
+        }
+
+        
+
+        $usuario->password_usuario = md5($request->txtNewContrasena);
+        $usuario->save();
+
+        return redirect()->back()->withInput()->withErrors(['passwordGreen' => "Se Cambio la Contraseña Correctamente"]);
+
+
+    }
+
     public function userName($usuario){
         $valor= array();
         $existe = user::where('nombre_usuario',$usuario)->count();

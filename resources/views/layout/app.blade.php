@@ -45,7 +45,8 @@
 
                 <div class="page-content">
                     <div class="container-fluid">
-  
+                        @include('modals.cambiarContrasenaModals') 
+                        @include('mensajes.alertas')
                         @yield('contenido')
                                 
 

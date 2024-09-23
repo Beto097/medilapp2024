@@ -180,10 +180,12 @@
                     <a class="dropdown-item" href="#"><i class="dripicons-wallet d-inline-block text-muted me-2"></i> My
                         Wallet</a>
                     <a class="dropdown-item d-block" href="#"><i
-                            class="dripicons-gear d-inline-block text-muted me-2"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="dripicons-lock d-inline-block text-muted me-2"></i> Lock
-                        screen</a>
-                    <div class="dropdown-divider"></div> --}}
+                            class="dripicons-gear d-inline-block text-muted me-2"></i> Settings</a> --}}
+                            
+                    <button class="dropdown-item"  data-bs-toggle="modal" data-animation="bounce"
+                    data-bs-target=".cambiarContrasenaModal"><i class="dripicons-lock d-inline-block text-muted me-2"></i> Cambiar Contraseña</button>
+                   
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{route('login.cerrar')}}"><i class="dripicons-exit d-inline-block text-muted me-2"></i>
                         Cerrar Sesión</a>
                 </div>
@@ -194,4 +196,5 @@
         </div>
     
     </div>
+    
 </header>
