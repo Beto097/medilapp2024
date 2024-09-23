@@ -175,7 +175,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="dripicons-user d-inline-block text-muted me-2"></i>
+                    {{-- <a class="dropdown-item" href="#"><i class="dripicons-user d-inline-block text-muted me-2"></i>
                         Profile</a>
                     <a class="dropdown-item" href="#"><i class="dripicons-wallet d-inline-block text-muted me-2"></i> My
                         Wallet</a>
@@ -183,9 +183,9 @@
                             class="dripicons-gear d-inline-block text-muted me-2"></i> Settings</a>
                     <a class="dropdown-item" href="#"><i class="dripicons-lock d-inline-block text-muted me-2"></i> Lock
                         screen</a>
-                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"></div> --}}
                     <a class="dropdown-item" href="{{route('login.cerrar')}}"><i class="dripicons-exit d-inline-block text-muted me-2"></i>
-                        Logout</a>
+                        Cerrar Sesión</a>
                 </div>
             </div>
 
