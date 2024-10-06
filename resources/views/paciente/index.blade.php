@@ -98,11 +98,6 @@
                                 <a class="btn btn-info btn-sm btnIcono" title="Crear Orden" href="{{route('orden_laboratorio.create2', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
                                 
                               @endif
-
-                              @if (Auth::user()->accesoRuta('/imprimirHistorial'))                        
-                                <a class="btn btn-warning btn-sm btnIcono" title="Imprimir Historial" href="{{route('consulta.ver.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
-                                
-                              @endif
                               
                               @if (Auth::user()->accesoRuta('/paciente/consulta')) 
 
