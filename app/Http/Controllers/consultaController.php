@@ -46,6 +46,7 @@ class consultaController extends Controller
 
     public function create($id){
 
+
         if (!Auth::user()) {
 
             Session::put('url', url()->current());    
@@ -59,6 +60,26 @@ class consultaController extends Controller
 
             return view('consulta.iniciar',['consulta'=>$consulta,'paciente'=>$paciente]);
         }
+    }
+
+    public function verHistorial($id){
+
+        if (!Auth::user()) {
+
+            Session::put('url', url()->current());    
+            return redirect(route('login.index'));
+        }
+        
+
+        $paciente = paciente::find($id);                
+                                   
+                
+                
+                            
+        $pdf= \PDF::loadView('pdf.historial', ["paciente"=>$paciente]);
+        $nombreArchivo = 'prueba.pdf';
+        return $pdf->stream($nombreArchivo);
+                    
     }
 
 

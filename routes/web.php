@@ -77,6 +77,7 @@ use App\Http\Controllers\Controller;
     Route::get("/consulta/historial/{id}", [consultaController::class, 'historial'])->name("consulta.historial");
     Route::Post("/consulta/menor/", [consultaController::class, 'menor'])->name("consulta.menor");
     Route::get("/consulta/delete/{id}", [consultaController::class, 'delete'])->name("consulta.delete");
+    Route::get("/consulta/ver/historial/{id}", [consultaController::class, 'verHistorial'])->name("consulta.ver.historial");
 
      /*caracteristica examen*/
     Route::get("/caracteristicaExamen",[caracteristica_examen_controller::class,'mostrar'])->name("caracteristica_examen.mostrar");

@@ -98,6 +98,11 @@
                                 <a class="btn btn-info btn-sm btnIcono" title="Crear Orden" href="{{route('orden_laboratorio.create2', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
                                 
                               @endif
+
+                              @if (Auth::user()->accesoRuta('/imprimirHistorial'))                        
+                                <a class="btn btn-warning btn-sm btnIcono" title="Imprimir Historial" href="{{route('consulta.ver.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-file-medical"></i></a>
+                                
+                              @endif
                               
                               @if (Auth::user()->accesoRuta('/paciente/consulta')) 
 
@@ -115,10 +120,6 @@
                                 
                                 
                               @endif  
-                              @if (Auth::user()->accesoRuta('/paciente/historia/clinica'))
-
-                                <a class="btn btn-pink btn-sm btnIcono" title="Ver Historial" href="{{route('consulta.historial', ['id'=> $fila->id] )}}" class="" ><i id="iconoBoton" class="fas fa-file-medical"></i></a>
-                              @endif
 
                               @if (Auth::user()->accesoRuta('/paciente/update'))
                                 <button type="button" class="btn btn-success btn-sm"
@@ -142,6 +143,11 @@
                                 
                                 @endif 
                                
+                              @endif
+
+                              @if (Auth::user()->accesoRuta('/imprimirHistorial'))                        
+                                <a class="btn btn-dark btn-sm btnIcono" title="Imprimir Historial" href="{{route('consulta.ver.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-print"></i></a>
+                                
                               @endif
                               
                             </td>
