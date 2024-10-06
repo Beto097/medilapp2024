@@ -77,8 +77,8 @@ class consultaController extends Controller
                 
                             
         $pdf= \PDF::loadView('pdf.historial', ["paciente"=>$paciente]);
-        $nombreArchivo = 'prueba.pdf';
-        return $pdf->stream($nombreArchivo);
+        $nombreArchivo = $paciente->nombre_paciente+' '+$paciente->apellido_paciente+'.pdf';
+        return $pdf->download($nombreArchivo);
                     
     }
 
