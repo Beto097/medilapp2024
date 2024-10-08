@@ -33,7 +33,7 @@
                        
                         <div class="px-2 mt-2" style="padding-top: 50%;">
                             <h3 class="text-center m-0">
-                                <img src="{{asset('images/logo110.png')}}"
+                                <img src="{{asset('images/logo11.png')}}"
                                          height="60" alt="logo" class="my-3">
                              </h3>
                            
