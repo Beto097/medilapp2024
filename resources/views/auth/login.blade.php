@@ -29,8 +29,6 @@
             <div class="col-lg-3 pe-0">
                 <div class="card mb-0 shadow-none">
                     <div class="card-body">
-                        
-                       
                         <div class="px-2 mt-2" style="padding-top: 50%;">
                             <h3 class="text-center m-0">
                                 <img src="{{asset('images/logo11.png')}}"
