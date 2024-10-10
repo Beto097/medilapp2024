@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\consulta;
 use App\Models\paciente;
 use Carbon\Carbon;
-use Mpdf\Mpdf;
+use Vendor\Mpdf\Mpdf;
 use Session;
 
 class consultaController extends Controller
