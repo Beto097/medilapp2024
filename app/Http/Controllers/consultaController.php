@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\consulta;
 use App\Models\paciente;
 use Carbon\Carbon;
+use Mpdf\Mpdf;
 use Session;
 
 class consultaController extends Controller
@@ -75,11 +76,18 @@ class consultaController extends Controller
                                    
                 
                 
-                            
+        /*                    
         $pdf= \PDF::loadView('pdf.historial', ["paciente"=>$paciente]);
         $nombreArchivo = $paciente->nombre_paciente.' '.$paciente->apellido_paciente.'.pdf';
         return $pdf->download($nombreArchivo);
-        //return view('pdf.historial',['paciente'=>$paciente]);
+        //return view('pdf.historial',['paciente'=>$paciente]);*/
+
+        
+
+        $mpdf = new Mpdf();
+        $html = view('pdf.historial',['paciente'=>$paciente])->render();
+        $mpdf->WriteHTML($html);
+        $mpdf->Output('archivo.pdf', 'D');
                     
     }
 
