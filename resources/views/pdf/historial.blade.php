@@ -118,7 +118,7 @@
         </tbody>
     </table> 
     
-
+    <br>
     <h3>Consultas Recientes</h3>
 	@foreach($paciente->consultas as $consulta)
 	<hr>
