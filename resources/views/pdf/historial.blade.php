@@ -11,8 +11,9 @@
             font-family: 'Rubik', sans-serif;
             margin: 20px;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #2c3e50;
+			text-align: center; /* Centrar el texto */
         }
         /* Estilos básicos para la tabla */
         table {
@@ -77,10 +78,7 @@
             text-decoration: underline;
         }
 		
-		.center-horizontal {
-		width: 50%; /* O cualquier otro valor que desees */
-		margin: 0 auto; /* Centra el div horizontalmente */
-		}
+		
 		
 		hr {
             border: none; /* Elimina el borde por defecto */
@@ -93,9 +91,9 @@
 <body>
 
         
-        <h1 class="center-horizontal"><strong>Historial Clínico</strong></h1>
-	<h2 class="center-horizontal">Zuara Salud</h2>
-    
+        <h1 ><strong>Historial Clínico</strong></h1>
+	<h2 >Zuara Salud</h2>
+   
 			
 	<table>
         <thead>
@@ -121,7 +119,7 @@
     </table> 
     
 
-    <h3 class="center-horizontal">Consultas Recientes</h3>
+    <h3>Consultas Recientes</h3>
 	@foreach($paciente->consultas as $consulta)
 	<hr>
     <table>
