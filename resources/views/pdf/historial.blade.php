@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Historial Clínico</title>
     <style>
         body {
-            font-family: Verdana, sans-serif;
+            font-family: 'Rubik', sans-serif;
             margin: 20px;
         }
         h1, h2 {
@@ -18,7 +19,7 @@
             border-collapse: separate; /* Permite bordes redondeados */
             border-spacing: 0; /* Elimina el espacio entre celdas */
             margin-bottom: 20px;
-            font-family: Verdana, sans-serif;
+            font-family: 'Rubik', sans-serif;
             border-radius: 10px; /* Bordes redondeados */
             overflow: hidden; /* Asegura que los bordes redondeados afecten todo */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -113,12 +114,20 @@
             line-height: 1.5;
             margin-bottom: 15px;
         }
+		
+		.center-horizontal {
+		width: 100%; /* O cualquier otro valor que desees */
+		margin: 0 auto; /* Centra el div horizontalmente */
+		}
     </style>
 </head>
 <body>
-
-    <h2>Historial Clínico de {{$paciente->nombre_paciente}} {{$paciente->apellido_paciente}}</h2>
-	
+<div class="center-horizontal">
+        
+        <h1 class="center-horizontal"><strong>Historial Clínico</strong></h1>
+	<h2>Zuara Salud</h2>
+    </div>
+    
 			
 	<table>
         <thead>
@@ -169,7 +178,7 @@
 								<td><strong>Diagnóstico:</strong> <br>{{$consulta->diagnostico}}</td>
 							</tr>
 							<tr>
-								<td><strong></strong>Rx: <br>{{$consulta->laboratorios_examenes}}</td>
+								<td><strong>Rx:</strong> <br>{{$consulta->laboratorios_examenes}}</td>
 							</tr>
 							<tr>
 								<td><strong>Tratamiento:</strong> <br>{{$consulta->recomendaciones}}</td>
