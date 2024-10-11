@@ -8,7 +8,6 @@
         body {
             font-family: Verdana, sans-serif;
             margin: 20px;
-            background-color: #f4f4f9;
         }
         h1, h2 {
             color: #2c3e50;
@@ -29,7 +28,7 @@
         th, td {
             padding: 12px 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd; /* Línea sutil entre filas */
+            border-bottom: 1px solid #ffff; /* Línea sutil entre filas */
         }
 
         /* Color de fondo de los encabezados */
@@ -119,17 +118,30 @@
 <body>
 
     <h2>Historial Clínico de {{$paciente->nombre_paciente}} {{$paciente->apellido_paciente}}</h2>
-	<div class="card">
-	<div class="card-body">
-           <h2>Generales del paciente</h2>
-			<p><strong>Nombre:</strong> {{$paciente->nombre_paciente}} {{$paciente->apellido_paciente}}</p>
-			<p><strong>Edad:</strong> {{\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->age}}</p>
-			<p><strong>Género:</strong> @if($paciente->sexo_paciente=="m")Masculino @else Femenino @endif</p>
-			<p><strong>Fecha de Nacimiento:</strong> {{\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->format('d-m-Y')}}</p>
-        </div>
-		</div>
+	
 			
-
+	<table>
+        <thead>
+            <tr>
+                <th>GENERALES DEL PACIENTE</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td><strong>Nombre:</strong> {{$paciente->nombre_paciente}} {{$paciente->apellido_paciente}}</td>
+					
+				</tr>
+				<tr>
+					<td><strong>Edad:</strong> {{\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->age}}</td>
+				</tr>
+				<tr>
+					<td><strong>Género:</strong> @if($paciente->sexo_paciente=="m")Masculino @else Femenino @endif</td>
+				</tr>
+				<tr>
+					<td><strong>Fecha de Nacimiento:</strong> {{\Carbon\Carbon::parse($paciente->fecha_nacimiento_paciente)->format('d-m-Y')}}</td>
+				</tr>
+        </tbody>
+    </table> 
     
 
     <h2>Consultas Recientes</h2>
