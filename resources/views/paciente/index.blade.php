@@ -141,16 +141,7 @@
                                
                               @endif
                               @if (Auth::user()->accesoRuta('/paciente/historia/clinica'))
-
                                 <a class="btn btn-pink btn-sm btnIcono" title="Ver Historial" href="{{route('consulta.historial', ['id'=> $fila->id] )}}" class="" ><i id="iconoBoton" class="fas fa-file-medical"></i></a>
-                              @endif
-
-                              @if (Auth::user()->accesoRuta('/paciente/update'))
-                                <button type="button" class="btn btn-success btn-sm"
-                                  data-bs-toggle="modal" data-animation="bounce"
-                                  data-bs-target=".editarPacienteModal{{$fila->id}}">
-                                  <i id="iconoBoton" class="fas fa-user-edit"></i>
-                                </button>  
                               @endif
                               @if (Auth::user()->accesoRuta('/imprimirHistorial'))                        
                                 <a class="btn btn-dark btn-sm btnIcono" title="Imprimir Historial" href="{{route('consulta.ver.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-print"></i></a>
