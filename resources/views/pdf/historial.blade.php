@@ -144,31 +144,45 @@
     </table> 
     
 
-    <h2>Consultas Recientes</h2>
+    <h3>Consultas Recientes</h3>
+	@foreach($paciente->consultas as $consulta)
     <table>
+	
         <thead>
             <tr>
-                <th>Fecha</th>
-                <th>Medico</th>
-                <th>Historia Clinica</th>
-                <th>Diagnóstico</th>
-                <th>Tratamiento</th>
+                <th>Fecha: {{\Carbon\Carbon::parse($consulta->fecha_consulta)->format('d-m-Y')}} </th>
+                
             </tr>
         </thead>
         <tbody>
-            @foreach($paciente->consultas as $consulta)
+            
                 <tr>
-                    <td>{{\Carbon\Carbon::parse($consulta->fecha_consulta)->format('d-m-Y')}}</td>
-                    <td>{{$consulta->nombre_medico}}</td>
-                    <td>{{$consulta->historia_clinica}}</td>
-                    <td>{{$consulta->diagnostico}}</td>
-                    <td>{{$consulta->recomendaciones}}</td>
+							<tr>
+								<td><strong>Médico:</strong> <br>{{$consulta->nombre_medico}}</td>
+								
+							</tr>
+							<tr>
+								<td><strong>Historia Clinica:</strong> <br>{{$consulta->historia_clinica}}</td>
+								
+							</tr>
+							<tr>
+								<td><strong>Diagnóstico:</strong> <br>{{$consulta->diagnostico}}</td>
+							</tr>
+							<tr>
+								<td><strong></strong>Rx: <br>{{$consulta->laboratorios_examenes}}</td>
+							</tr>
+							<tr>
+								<td><strong>Tratamiento:</strong> <br>{{$consulta->recomendaciones}}</td>
+							</tr>
+					
+                    
+                    
                 </tr>
-            @endforeach
+            
            
            
         </tbody>
     </table> 
-
+@endforeach
 </body>
 </html>
