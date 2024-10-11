@@ -6,12 +6,6 @@
 	
     <title>Historial Clínico</title>
     <style>
-        @font-face {
-        font-family: 'Rubik';
-        src: url('font/Rubik-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        }
 
         body {
             font-family: 'Rubik', sans-serif;
@@ -83,57 +77,24 @@
             text-decoration: underline;
         }
 		
-		/* Estilo básico para la tarjeta */
-        .card {
-            
-            border-radius: 15px; /* Bordes redondeados */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            overflow: hidden; /* Asegura que los bordes redondeados contengan el contenido */
-            background-color: white; /* Fondo blanco */
-            font-family: Arial, sans-serif; /* Fuente */
-            transition: transform 0.2s; /* Efecto de transición al hacer hover */
-        }
-
-        /* Estilo para la imagen en la tarjeta */
-        .card img {
-            width: 100%;
-            height: auto;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-
-        /* Estilo para el contenido de la tarjeta */
-        .card-body {
-            padding: 20px;
-        }
-
-        /* Estilo para el título */
-        .card-title {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        /* Estilo para el texto */
-        .card-text {
-            font-size: 1em;
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-		
 		.center-horizontal {
-		width: 100%; /* O cualquier otro valor que desees */
+		width: 50%; /* O cualquier otro valor que desees */
 		margin: 0 auto; /* Centra el div horizontalmente */
 		}
+		
+		hr {
+            border: none; /* Elimina el borde por defecto */
+            height: 2px; /* Grosor de la línea */
+            background-color: #333; /* Color de la línea */
+            margin: 20px 0; /* Espaciado arriba y abajo */
+        }
     </style>
 </head>
 <body>
-<div class="center-horizontal">
+
         
         <h1 class="center-horizontal"><strong>Historial Clínico</strong></h1>
-	<h2>Zuara Salud</h2>
-    </div>
+	<h2 class="center-horizontal">Zuara Salud</h2>
     
 			
 	<table>
@@ -160,8 +121,9 @@
     </table> 
     
 
-    <h3>Consultas Recientes</h3>
+    <h3 class="center-horizontal">Consultas Recientes</h3>
 	@foreach($paciente->consultas as $consulta)
+	<hr>
     <table>
 	
         <thead>
@@ -174,7 +136,7 @@
             
                 <tr>
 							<tr>
-								<td><strong>Médico:</strong> <br>{{$consulta->nombre_medico}}</td>
+								<td><strong>Médico: </strong>{{$consulta->nombre_medico}}</td>
 								
 							</tr>
 							<tr>
