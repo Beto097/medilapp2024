@@ -159,6 +159,7 @@
            
         </tbody>
     </table> 
+    <br>
 @endforeach
 </body>
 </html>
