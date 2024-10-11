@@ -70,23 +70,10 @@ class consultaController extends Controller
             return redirect(route('login.index'));
         }
         
-
-        $paciente = paciente::find($id);                
-                                   
-                
-                
-        /*                    
+        $paciente = paciente::find($id);      
         $pdf= \PDF::loadView('pdf.historial', ["paciente"=>$paciente]);
         $nombreArchivo = $paciente->nombre_paciente.' '.$paciente->apellido_paciente.'.pdf';
         return $pdf->download($nombreArchivo);
-        //return view('pdf.historial',['paciente'=>$paciente]);*/
-
-        
-
-        $mpdf = new Mpdf();
-        $html = view('pdf.historial',['paciente'=>$paciente])->render();
-        $mpdf->WriteHTML($html);
-        $mpdf->Output('archivo.pdf', 'D');
                     
     }
 
