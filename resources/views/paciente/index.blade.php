@@ -151,7 +151,6 @@
                                   data-bs-target=".editarPacienteModal{{$fila->id}}">
                                   <i id="iconoBoton" class="fas fa-user-edit"></i>
                                 </button>  
-                                @include('modals.editarPacienteModals')
                               @endif
                               @if (Auth::user()->accesoRuta('/imprimirHistorial'))                        
                                 <a class="btn btn-dark btn-sm btnIcono" title="Imprimir Historial" href="{{route('consulta.ver.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-print"></i></a>
