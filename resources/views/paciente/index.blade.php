@@ -140,7 +140,9 @@
                                 @endif 
                                
                               @endif
-
+                              @if (Auth::user()->accesoRuta('/paciente/historia/clinica'))
+                                <a class="btn btn-pink btn-sm btnIcono" title="Ver Historial" href="{{route('consulta.historial', ['id'=> $fila->id] )}}" class="" ><i id="iconoBoton" class="fas fa-file-medical"></i></a>
+                              @endif
                               @if (Auth::user()->accesoRuta('/imprimirHistorial'))                        
                                 <a class="btn btn-dark btn-sm btnIcono" title="Imprimir Historial" href="{{route('consulta.ver.historial', ['id'=> $fila->id] )}}" class=""><i id="iconoBoton" class="fas fa-print"></i></a>
                                 
