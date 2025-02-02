@@ -74,16 +74,10 @@ class User extends Authenticatable
     }
 
     
-    public function relacionado(){
+    public function relacionado(){        
+        
 
-        if (str_contains($this->nombre_usuario, '1')) {
-
-            $usuarios = User::where('nombre_usuario', 'like', '%1%')->get();
-        }
-        if (str_contains($this->nombre_usuario, '2')) {
-
-            $usuarios = User::where('nombre_usuario', 'like', '%2%')->get();
-        }
+        $usuarios = User::where('clinica_id',$this->clinica_id)->get();
 
         $lista= array();
         foreach($usuarios as $usuario){

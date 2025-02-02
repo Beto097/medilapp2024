@@ -37,6 +37,7 @@ class consultaController extends Controller
                 $resultado = consulta::whereIn('usuario_id',Auth::user()->relacionado())->where('estado_consulta','Pendiente')->orWhere('estado_consulta','EN CURSO')->orderBy('estado_consulta','DESC')->get();
 
             }else{
+                
 
                 $resultado = consulta::whereIn('usuario_id',Auth::user()->relacionado())->where('estado_consulta','Pendiente')->get();
 
