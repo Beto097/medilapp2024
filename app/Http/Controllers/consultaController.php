@@ -23,16 +23,22 @@ class consultaController extends Controller
 
             consulta::actualizarEstados();
 
+            
+
             if(Auth::user()->accesoRuta('/consulta/all')){
+
+                
 
                 $resultado = consulta::get();
 
-            }elseif(Auth::user()->accesoRuta('/paciente/historia/clinica')){
+            }elseif(Auth::user()->accesoRuta('/paciente/historia/clinica')){                
+                
 
-                $resultado = consulta::where('estado_consulta','Pendiente')->orWhere('estado_consulta','EN CURSO')->orderBy('estado_consulta','DESC')->get();
+                $resultado = consulta::whereIn('usuario_id',Auth::user()->relacionado())->where('estado_consulta','Pendiente')->orWhere('estado_consulta','EN CURSO')->orderBy('estado_consulta','DESC')->get();
+
             }else{
 
-                $resultado = consulta::where('estado_consulta','Pendiente')->get();
+                $resultado = consulta::whereIn('usuario_id',Auth::user()->relacionado())->where('estado_consulta','Pendiente')->get();
 
             }
 
@@ -91,7 +97,8 @@ class consultaController extends Controller
   
             $obj_consulta = new consulta();        
             $obj_consulta->paciente_id=$id;
-            $obj_consulta->estado_consulta = 'Pendiente';        
+            $obj_consulta->estado_consulta = 'Pendiente';
+            $obj_consulta->usuario_id = Auth::user()->id;        
             
             $obj_consulta->save();
             return redirect()->back()->withErrors(['status' => "Se ha creado la consulta para el paciente: " .$obj_consulta->paciente->identificacion_paciente ]);
@@ -194,4 +201,6 @@ class consultaController extends Controller
         
 
     }
+
+
 }

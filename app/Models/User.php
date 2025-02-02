@@ -72,5 +72,26 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    
+    public function relacionado(){
+
+        if (str_contains($this->nombre_usuario, '1')) {
+
+            $usuarios = User::where('nombre_usuario', 'like', '%1%')->get();
+        }
+        if (str_contains($this->nombre_usuario, '2')) {
+
+            $usuarios = User::where('nombre_usuario', 'like', '%2%')->get();
+        }
+
+        $lista= array();
+        foreach($usuarios as $usuario){
+            array_push($lista,$usuario->id);
+        }
+    
+        
+       return $lista;
+    }
     
 }
