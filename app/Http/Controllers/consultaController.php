@@ -170,7 +170,8 @@ class consultaController extends Controller
             $obj_consulta->paciente_id= $request->paciente_id;
             $obj_consulta->responsable_menor = $request->txtNombre;
             $obj_consulta->parentesco_menor = $request->txtParentesco;
-            $obj_consulta->estado_consulta = 'Pendiente';        
+            $obj_consulta->estado_consulta = 'Pendiente';      
+            $obj_consulta->usuario_id = Auth::user()->id;  
             
             $obj_consulta->save();
             return redirect()->back()->withErrors(['status' => "Se ha creado la consulta para el paciente: " .$obj_consulta->paciente->identificacion_paciente ]);
