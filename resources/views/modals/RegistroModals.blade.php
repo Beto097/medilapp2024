@@ -58,7 +58,7 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Diagnostico</span>
                                     <input type="text"  class="form-control" id="inputapellido" placeholder="Ejemplo:Perez" name="txtDiagnostico"                                    
-                                                                                    value= '{{$consulta->diagnostico}} '
+                                                                                    value= "{{$consulta->diagnostico}}"
                                         required >  
                                 </div>
                             </div>
