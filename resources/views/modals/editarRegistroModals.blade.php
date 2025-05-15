@@ -62,9 +62,11 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">Diagnostico</span>
-                                    <input type="text"  class="form-control" id="inputapellido" placeholder="Ejemplo:Perez" name="txtDiagnostico"
-                                    value="{{$fila->diagnostico}}" required >  
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Diagnóstico</span>
+                                    <textarea  class="form-control" id="txtDiagnostico" placeholder="Escriba diagnóstico" name="txtDiagnostico"                                    
+                                                                                    value= "{{$consulta->diagnostico}}"></textarea>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
