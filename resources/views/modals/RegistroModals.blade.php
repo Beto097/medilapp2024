@@ -56,10 +56,10 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">Diagnostico</span>
-                                    <input type="text"  class="form-control" id="inputapellido" placeholder="Ejemplo:Perez" name="txtDiagnostico"                                    
+                                    <span class="input-group-text">Diagnóstico</span>
+                                    <textarea type="text"  class="form-control" id="inputapellido" placeholder="Ejemplo:Perez" name="txtDiagnostico"                                    
                                                                                     value= "{{$consulta->diagnostico}}"
-                                        required >  
+                                        required >  </textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
