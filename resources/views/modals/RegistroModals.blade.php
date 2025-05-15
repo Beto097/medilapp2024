@@ -58,7 +58,7 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Diagnóstico</span>
                                     <textarea  class="form-control" id="txtDiagnostico" placeholder="Escriba diagnóstico" name="txtDiagnostico"                                    
-                                                                                    value= "{{$consulta->diagnostico}}"></textarea>
+                                                                                    value= "{{$consulta->diagnostico}}">{{$consulta->diagnostico}}</textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12">
